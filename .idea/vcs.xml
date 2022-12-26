@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Java-WebSocket" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/dubbo-samples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/logging-log4j1" vcs="Git" />

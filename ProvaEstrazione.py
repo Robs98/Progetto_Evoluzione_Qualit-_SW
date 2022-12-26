@@ -27,7 +27,7 @@ def move_file(path_from: str, path_to:str) -> None:
     open(path_to, 'w+').write(data)
 
 
-os.system(f"cd {WEBSOCKET_PROJECT_DIR}  && git log --tags --simplify-by-decoration --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE_WS}")
+os.system(f"cd {WEBSOCKET_PROJECT_DIR}  && git log --all --grep=fix --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE_WS}")
 file_data = open(f'{WEBSOCKET_PROJECT_DIR}/{GIT_COMMITS_FILE_WS}', 'r+').read()
 open(GIT_COMMITS_FILE_WS, 'w+').write(file_data)
 #i commit sono filtrati per release
