@@ -14,15 +14,15 @@ CK_PATH = 'D:\Desktop\ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar'
 # GIT_COMMITS_FILE = 'commitsWebSocket.csv'
 # OUTPUT_DIR = 'output_WS'
 
-#retrofit
-PROJECT_DIR = './retrofit'
-GIT_COMMITS_FILE = 'commits_retrofit.csv'
-OUTPUT_DIR = 'output_retrofit'
+# #retrofit
+# PROJECT_DIR = './retrofit'
+# GIT_COMMITS_FILE = 'commits_retrofit.csv'
+# OUTPUT_DIR = 'output_retrofit'
 
-# #freemind
-# PROJECT_DIR = './freemind-mmx'
-# GIT_COMMITS_FILE = 'commits_freemind.csv'
-# OUTPUT_DIR = 'output_freemind'
+#apache dbutils
+PROJECT_DIR = './commons-dbutils'
+GIT_COMMITS_FILE = 'commits_commons.csv'
+OUTPUT_DIR = 'output_commons'
 
 
 # #apache-dubbo
@@ -38,7 +38,7 @@ def move_file(path_from: str, path_to:str) -> None:
     open(path_to, 'w+').write(data)
 
 
-os.system(f"cd {PROJECT_DIR}  && git log --all --grep=release --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE}")
+os.system(f"cd {PROJECT_DIR}  && git log --tags --simplify-by-decoration --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE}")
 file_data = open(f'{PROJECT_DIR}/{GIT_COMMITS_FILE}', 'r+').read()
 open(GIT_COMMITS_FILE, 'w+').write(file_data)
 #i commit sono filtrati per release
