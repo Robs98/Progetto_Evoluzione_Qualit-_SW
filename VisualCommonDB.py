@@ -72,7 +72,7 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.yticks(y)
     # assegniamo etichette agli assi
     plt.xlabel("#commits")
-    plt.ylabel("Valori del " + metrica)
+    plt.ylabel("Valore " + metrica)
     # impostiamo il titolo del grafico
     plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
     # chiediamo di visualizzare la griglia
