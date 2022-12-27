@@ -3,7 +3,7 @@ import os.path
 import pandas as pd
 
 from plotly.subplots import make_subplots
-from src.utils import Settings
+#from src.utils import Settings
 import plotly.graph_objects as go
 CSV_TO_PLOT = Settings.init()["path_sorter"]
 
