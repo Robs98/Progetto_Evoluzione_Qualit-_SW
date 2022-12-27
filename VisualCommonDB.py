@@ -129,6 +129,6 @@ def graficoModificheClassi():
     explode = [0, 0.2]
     fig, ax = plt.subplots()
     ax.pie(x, labels=label, autopct='%.0f%%', explode = explode)
-    ax.set_title('FreeMind project-Modifiche classi')
+    ax.set_title('CommondDB project-Modifiche classi')
     plt.show()
 print(graficoModificheClassi())
