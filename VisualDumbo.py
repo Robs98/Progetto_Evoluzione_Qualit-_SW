@@ -11,7 +11,7 @@ print("Dati Metriche")
 
 #DUMBO
 DUBBO_PROJECT_DIR = './dubbo-samples'
-GIT_COMMITS_FILE_DUBBO = 'commitsDubbo.csv'
+GIT_COMMITS_FILE_DUBBO = './dubbo-samples/commitsDubbo.csv'
 DIFFERENZE_FILE_DUMBO = './dubbo-samples/differenzeDumbo.txt'
 
 
@@ -61,31 +61,31 @@ def aggiuntaClasse(class_name):
 
 
 
-#
-# def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
-#     x = np.arange(0,len(rigaClassiCommit.index))
-#     y = np.array(rigaClassiCommit[metrica])
-#     # ridimensioniamo l'immagine
-#     plt.figure(figsize=(100, 100))
-#     # impostiamo i ticks
-#     #plt.xticks(x)
-#     plt.yticks(y)
-#     # assegniamo etichette agli assi
-#     plt.xlabel("#commits")
-#     plt.ylabel("Valori del " + metrica)
-#     # impostiamo il titolo del grafico
-#     plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
-#     # chiediamo di visualizzare la griglia
-#     plt.grid()
-#     # disegniamo due linee
-#     plt.plot(x, y)
-#     plt.axhline(y=y.mean(), c='r', linestyle='--')
-#     plt.show()
-# classi = ["org.apache.dubbo.samples.resilience4j.action.AnnotationAction","org.apache.dubbo.samples.chain.FrontendConsumer","org.apache.dubbo.samples.governance.ZKTools"]
-# metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
-# for classe in classi:
-#     for metrica in metriche:
-#         grafico_metriche_CK(aggiuntaClasse(classe),metrica,classe)
+
+def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
+    x = np.arange(0,len(rigaClassiCommit.index))
+    y = np.array(rigaClassiCommit[metrica])
+    # ridimensioniamo l'immagine
+    plt.figure(figsize=(100, 100))
+    # impostiamo i ticks
+    #plt.xticks(x)
+    plt.yticks(y)
+    # assegniamo etichette agli assi
+    plt.xlabel("#commits")
+    plt.ylabel("Valori del " + metrica)
+    # impostiamo il titolo del grafico
+    plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
+    # chiediamo di visualizzare la griglia
+    plt.grid()
+    # disegniamo due linee
+    plt.plot(x, y)
+    plt.axhline(y=y.mean(), c='r', linestyle='--')
+    plt.show()
+classi = ["org.apache.dubbo.samples.resilience4j.action.AnnotationAction","org.apache.dubbo.samples.chain.FrontendConsumer","org.apache.dubbo.samples.governance.ZKTools"]
+metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
+for classe in classi:
+    for metrica in metriche:
+        grafico_metriche_CK(aggiuntaClasse(classe),metrica,classe)
 
 
 
@@ -106,8 +106,8 @@ def estrazioniClassiDaCommit(commits_csv):
 
     os.system(f"cd {DUBBO_PROJECT_DIR}  && git diff --numstat {first_commit_hash}..{last_commit_hash}> differenzeDumbo.txt")
     read_file = pd.read_csv (r'./dubbo-samples/differenzeDumbo.txt', delimiter='|')
-    read_file.to_csv (r'differenze.csv',index=None)
-    rows = open('differenze.csv', 'r+').readlines()
+    read_file.to_csv (r'differenzeDubbo.csv',index=None)
+    rows = open('differenzeDubbo.csv', 'r+').readlines()
     listaClassi = []
     for i in rows:
         # row = rows[i]

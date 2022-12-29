@@ -12,7 +12,7 @@ print("Dati Metriche")
 
 
 WEBSOCKET_PROJECT_DIR = './Java-WebSocket'
-GIT_COMMITS_FILE_WS = 'commitsWebSocket.csv'
+GIT_COMMITS_FILE_WS = './Java-WebSocket/commitsWebSocket.csv'
 DIFFERENZE_FILE_WS= './Java-WebSocket/differenzeWS.txt'
 
 
@@ -62,30 +62,30 @@ def aggiuntaClasse(class_name):
 
 
 
-# def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
-#     x = np.arange(0,len(rigaClassiCommit.index))
-#     y = np.array(rigaClassiCommit[metrica])
-#     # ridimensioniamo l'immagine
-#     plt.figure(figsize=(100, 100))
-#     # impostiamo i ticks
-#     #plt.xticks(x)
-#     plt.yticks(y)
-#     # assegniamo etichette agli assi
-#     plt.xlabel("#commits")
-#     plt.ylabel("Valori del " + metrica)
-#     # impostiamo il titolo del grafico
-#     plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
-#     # chiediamo di visualizzare la griglia
-#     plt.grid()
-#     # disegniamo due linee
-#     plt.plot(x, y)
-#     plt.axhline(y=y.mean(), c='r', linestyle='--')
-#     plt.show()
-# classi = ["org.java_websocket.drafts.Draft_6455","org.java_websocket.server.WebSocketServer","org.java_websocket.autobahn.AutobahnServerResultsTest"]
-# metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
-# for classe in classi:
-#     for metrica in metriche:
-#         grafico_metriche_CK(aggiuntaClasse(classe),metrica,classe)
+def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
+    x = np.arange(0,len(rigaClassiCommit.index))
+    y = np.array(rigaClassiCommit[metrica])
+    # ridimensioniamo l'immagine
+    plt.figure(figsize=(100, 100))
+    # impostiamo i ticks
+    #plt.xticks(x)
+    plt.yticks(y)
+    # assegniamo etichette agli assi
+    plt.xlabel("#commits")
+    plt.ylabel("Valori del " + metrica)
+    # impostiamo il titolo del grafico
+    plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
+    # chiediamo di visualizzare la griglia
+    plt.grid()
+    # disegniamo due linee
+    plt.plot(x, y)
+    plt.axhline(y=y.mean(), c='r', linestyle='--')
+    plt.show()
+classi = ["org.java_websocket.drafts.Draft_6455","org.java_websocket.server.WebSocketServer","org.java_websocket.autobahn.AutobahnServerResultsTest"]
+metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
+for classe in classi:
+    for metrica in metriche:
+        grafico_metriche_CK(aggiuntaClasse(classe),metrica,classe)
 
 
 

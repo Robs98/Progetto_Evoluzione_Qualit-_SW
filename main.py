@@ -1,4 +1,7 @@
 import os
+import datetime
+from pathlib import Path
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -57,7 +60,6 @@ for i in rows:
 #TOOL CK
 
     os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
-
     for file in ['class.csv']:
         if not os.path.exists(OUTPUT_DIR) or not os.path.isdir(OUTPUT_DIR):
             os.makedirs(OUTPUT_DIR)

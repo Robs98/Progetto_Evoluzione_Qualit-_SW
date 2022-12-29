@@ -18,40 +18,29 @@ OUTPUT_DIR = 'output_commons'
 
 
 
-
-
-
-
-
-
-
-
-# path = r'D:\Desktop\downloader\output'                     # use your path
-# all_files = glob.glob(os.path.join(path, "*.csv"))     # advisable to use os.path.join as this makes concatenation OS independent
-#
-# df_from_each_file = (pd.read_csv(f) for f in all_files)
-# concatenated_df = pd.concat(df_from_each_file, ignore_index=True)
-
+#lista i file in ordine di modifca
+def sorted_ls(path):
+    mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
+    return list(sorted(os.listdir(path), key=mtime))
 
 
 
 def aggiuntaClasse(class_name):
     dfs = []
-    for filename in os.scandir("D:\Desktop\downloader\output_commons"):
-        if filename.is_file():
-            # il filename viene restituito come <DirEntry 'class417540963a54e5faa4a11378ee87153a1984dc06.csv'>
-            # è necessario estrapolare il filename dalla stringa con il .name
-            filename_string = os.path.basename(filename)
+    files = sorted_ls("D:\Desktop\downloader\output_commons")
+    for filename in files:
+        filename_string = os.path.basename(filename)
+        print(filename_string)
+        df = pd.read_csv("D:\Desktop\downloader\output_commons" + '\\' + filename_string, index_col=False)
 
-            df = pd.read_csv("D:\Desktop\downloader\output_commons" + '\\' + filename_string, index_col=False)
-
-            dframe = df[df['class'] == str(class_name)]
-            if dframe is not None:
+        dframe = df[df['class'] == str(class_name)]
+        if dframe is not None:
                 # inserisco nella prima colonna il numero del committ (per iterare), es 92 commit, va da 0 a 91
                 # seconda colonna:commit id
                 dfs.append(dframe)  # raccolta dei vari dataframe contenenti ognuno una riga di ogni csv
         final_dataframe = pd.concat(dfs)
     return final_dataframe
+
 
 
 
