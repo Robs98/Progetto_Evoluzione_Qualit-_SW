@@ -38,7 +38,7 @@ OUTPUT_DIR = 'output_retrofit'
 #lista i file in ordine di modifca
 def sorted_ls(path):
     mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
-    return list(sorted(os.listdir(path), key=mtime))
+    return list(sorted(os.listdir(path), key=mtime,reverse=True))
 
 
 
@@ -86,7 +86,7 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.plot(x, y)
     plt.axhline(y=y.mean(), c='r', linestyle='--')
     plt.show()
-classi = ["retrofit2.Utils","retrofit2.converter.jackson.JacksonResponseBodyConverter","retrofit2.RoboVmPlatformTest"]
+classi = ["retrofit.Utils","retrofit2.Utils","retrofit2.RoboVmPlatformTest"]
 metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
 for classe in classi:
     for metrica in metriche:

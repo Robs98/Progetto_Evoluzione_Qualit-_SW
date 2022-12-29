@@ -13,7 +13,7 @@ print("Dati Metriche")
 
 WEBSOCKET_PROJECT_DIR = './Java-WebSocket'
 GIT_COMMITS_FILE_WS = './Java-WebSocket/commitsWebSocket.csv'
-DIFFERENZE_FILE_WS= './Java-WebSocket/differenzeWS.txt'
+
 
 
 
@@ -38,7 +38,7 @@ DIFFERENZE_FILE_WS= './Java-WebSocket/differenzeWS.txt'
 #lista i file in ordine di modifca
 def sorted_ls(path):
     mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
-    return list(sorted(os.listdir(path), key=mtime))
+    return list(sorted(os.listdir(path), key=mtime,reverse=True))
 
 
 

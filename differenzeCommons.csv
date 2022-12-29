@@ -1,0 +1,159 @@
+7	0	.gitignore
+29	0	.travis.yml
+97	0	CONTRIBUTING.md
+3	3	NOTICE.txt
+0	103	PROPOSAL.html
+103	0	README.md
+108	5	RELEASE-NOTES.txt
+0	59	STATUS.html
+0	166	build.xml
+31	0	checkstyle-suppressions.xml
+181	40	checkstyle.xml
+0	29	doap_dbutils.rdf
+0	3	lib/README.txt
+16	0	license-header.txt
+0	99	maven.xml
+35	0	pmd-ruleset.xml
+272	40	pom.xml
+0	44	project.properties
+0	249	project.xml
+37	0	sb-excludes.xml
+375	0	src/changes/changes.xml
+143	0	src/changes/release-notes.vm
+0	191	src/java/org/apache/commons/dbutils/BasicRowProcessor.java
+0	474	src/java/org/apache/commons/dbutils/BeanProcessor.java
+0	286	src/java/org/apache/commons/dbutils/DbUtils.java
+0	185	src/java/org/apache/commons/dbutils/ProxyFactory.java
+0	551	src/java/org/apache/commons/dbutils/QueryRunner.java
+0	21	src/java/org/apache/commons/dbutils/handlers/package.html
+0	22	src/java/org/apache/commons/dbutils/package.html
+0	21	src/java/org/apache/commons/dbutils/wrappers/package.html
+44	0	src/main/assembly/bin.xml
+40	0	src/main/assembly/src.xml
+638	0	src/main/java/org/apache/commons/dbutils/AbstractQueryRunner.java
+691	0	src/main/java/org/apache/commons/dbutils/AsyncQueryRunner.java
+1973	0	src/main/java/org/apache/commons/dbutils/BaseResultSetHandler.java
+276	0	src/main/java/org/apache/commons/dbutils/BasicRowProcessor.java
+540	0	src/main/java/org/apache/commons/dbutils/BeanProcessor.java
+48	0	src/main/java/org/apache/commons/dbutils/ColumnHandler.java
+434	0	src/main/java/org/apache/commons/dbutils/DbUtils.java
+73	0	src/main/java/org/apache/commons/dbutils/GenerousBeanProcessor.java
+142	0	src/main/java/org/apache/commons/dbutils/OutParameter.java
+44	0	src/main/java/org/apache/commons/dbutils/PropertyHandler.java
+135	0	src/main/java/org/apache/commons/dbutils/ProxyFactory.java
+48	21	src/{ => main}/java/org/apache/commons/dbutils/QueryLoader.java
+950	0	src/main/java/org/apache/commons/dbutils/QueryRunner.java
+12	10	src/{ => main}/java/org/apache/commons/dbutils/ResultSetHandler.java
+47	27	src/{ => main}/java/org/apache/commons/dbutils/ResultSetIterator.java
+26	26	src/{ => main}/java/org/apache/commons/dbutils/RowProcessor.java
+205	0	src/main/java/org/apache/commons/dbutils/StatementConfiguration.java
+34	0	src/main/java/org/apache/commons/dbutils/annotations/Column.java
+21	0	src/main/java/org/apache/commons/dbutils/annotations/package-info.java
+87	0	src/main/java/org/apache/commons/dbutils/handlers/AbstractKeyedHandler.java
+15	10	src/{java/org/apache/commons/dbutils/handlers/GenericListHandler.java => main/java/org/apache/commons/dbutils/handlers/AbstractListHandler.java}
+27	21	src/{ => main}/java/org/apache/commons/dbutils/handlers/ArrayHandler.java
+22	21	src/{ => main}/java/org/apache/commons/dbutils/handlers/ArrayListHandler.java
+26	24	src/{ => main}/java/org/apache/commons/dbutils/handlers/BeanHandler.java
+31	26	src/{ => main}/java/org/apache/commons/dbutils/handlers/BeanListHandler.java
+185	0	src/main/java/org/apache/commons/dbutils/handlers/BeanMapHandler.java
+48	31	src/{ => main}/java/org/apache/commons/dbutils/handlers/ColumnListHandler.java
+65	80	src/{ => main}/java/org/apache/commons/dbutils/handlers/KeyedHandler.java
+24	22	src/{ => main}/java/org/apache/commons/dbutils/handlers/MapHandler.java
+23	21	src/{ => main}/java/org/apache/commons/dbutils/handlers/MapListHandler.java
+48	34	src/{ => main}/java/org/apache/commons/dbutils/handlers/ScalarHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/BooleanColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/ByteColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/DoubleColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/FloatColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/IntegerColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/LongColumnHandler.java
+35	0	src/main/java/org/apache/commons/dbutils/handlers/columns/SQLXMLColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/ShortColumnHandler.java
+34	0	src/main/java/org/apache/commons/dbutils/handlers/columns/StringColumnHandler.java
+35	0	src/main/java/org/apache/commons/dbutils/handlers/columns/TimestampColumnHandler.java
+21	0	src/main/java/org/apache/commons/dbutils/handlers/columns/package-info.java
+21	0	src/main/java/org/apache/commons/dbutils/handlers/package-info.java
+66	0	src/main/java/org/apache/commons/dbutils/handlers/properties/DatePropertyHandler.java
+35	0	src/main/java/org/apache/commons/dbutils/handlers/properties/StringEnumPropertyHandler.java
+21	0	src/main/java/org/apache/commons/dbutils/handlers/properties/package-info.java
+7	35	src/{test/org/apache/commons/dbutils/ResultSetIteratorTest.java => main/java/org/apache/commons/dbutils/package-info.java}
+137	103	src/{ => main}/java/org/apache/commons/dbutils/wrappers/SqlNullCheckedResultSet.java
+31	28	src/{ => main}/java/org/apache/commons/dbutils/wrappers/StringTrimmedResultSet.java
+21	0	src/main/java/org/apache/commons/dbutils/wrappers/package-info.java
+26	0	src/main/resources/META-INF/services/org.apache.commons.dbutils.ColumnHandler
+18	0	src/main/resources/META-INF/services/org.apache.commons.dbutils.PropertyHandler
+4	0	src/site/resources/download_dbutils.cgi
+-	-	src/site/resources/images/logo.png
+0	0	src/site/resources/profile.clirr
+0	0	src/site/resources/profile.jacoco
+0	0	src/site/resources/profile.japicmp
+49	0	src/site/site.xml
+8	6	{xdocs => src/site/xdoc}/building.xml
+156	0	src/site/xdoc/download_dbutils.xml
+105	13	{xdocs => src/site/xdoc}/examples.xml
+22	20	{xdocs => src/site/xdoc}/index.xml
+102	0	src/site/xdoc/issue-tracking.xml
+205	0	src/site/xdoc/mail-lists.xml
+4	2	{xdocs => src/site/xdoc}/proposal.xml
+513	0	src/test/java/org/apache/commons/dbutils/AsyncQueryRunnerTest.java
+71	0	src/test/java/org/apache/commons/dbutils/BaseResultSetHandlerTest.java
+138	165	src/test/{ => java}/org/apache/commons/dbutils/BaseTestCase.java
+161	0	src/test/java/org/apache/commons/dbutils/BasicRowProcessorTest.java
+189	0	src/test/java/org/apache/commons/dbutils/BeanProcessorTest.java
+327	0	src/test/java/org/apache/commons/dbutils/DbUtilsTest.java
+156	0	src/test/java/org/apache/commons/dbutils/GenerousBeanProcessorTest.java
+70	54	src/test/{ => java}/org/apache/commons/dbutils/MockResultSet.java
+31	16	src/test/{ => java}/org/apache/commons/dbutils/MockResultSetMetaData.java
+78	0	src/test/java/org/apache/commons/dbutils/OutParameterTest.java
+66	0	src/test/java/org/apache/commons/dbutils/ProxyFactoryTest.java
+20	20	src/test/{ => java}/org/apache/commons/dbutils/QueryLoaderTest.java
+1054	0	src/test/java/org/apache/commons/dbutils/QueryRunnerTest.java
+81	0	src/test/java/org/apache/commons/dbutils/ResultSetIteratorTest.java
+92	0	src/test/java/org/apache/commons/dbutils/ServiceLoaderTest.java
+82	0	src/test/java/org/apache/commons/dbutils/StatementConfigurationTest.java
+25	17	src/test/{ => java}/org/apache/commons/dbutils/TestBean.java
+19	22	src/test/{ => java}/org/apache/commons/dbutils/handlers/ArrayHandlerTest.java
+28	27	src/test/{ => java}/org/apache/commons/dbutils/handlers/ArrayListHandlerTest.java
+81	0	src/test/java/org/apache/commons/dbutils/handlers/BeanHandlerTest.java
+138	0	src/test/java/org/apache/commons/dbutils/handlers/BeanListHandlerTest.java
+90	0	src/test/java/org/apache/commons/dbutils/handlers/BeanMapHandlerTest.java
+10	15	src/test/{ => java}/org/apache/commons/dbutils/handlers/ColumnListHandlerTest.java
+122	0	src/test/java/org/apache/commons/dbutils/handlers/KeyedHandlerTest.java
+14	21	src/test/{ => java}/org/apache/commons/dbutils/handlers/MapHandlerTest.java
+67	0	src/test/java/org/apache/commons/dbutils/handlers/MapListHandlerTest.java
+10	14	src/test/{ => java}/org/apache/commons/dbutils/handlers/ScalarHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/BooleanColumnHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/ByteColumnHandlerTest.java
+52	0	src/test/java/org/apache/commons/dbutils/handlers/columns/ColumnHandlerTestBase.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/DoubleColumnHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/FloatColumnHandlerTest.java
+45	0	src/test/java/org/apache/commons/dbutils/handlers/columns/IntegerColumnHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/LongColumnHandlerTest.java
+44	0	src/test/java/org/apache/commons/dbutils/handlers/columns/SQLXMLColumnHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/ShortColumnHandlerTest.java
+38	0	src/test/java/org/apache/commons/dbutils/handlers/columns/StringColumnHandlerTest.java
+10	17	src/test/{org/apache/commons/dbutils/BeanProcessorTest.java => java/org/apache/commons/dbutils/handlers/columns/TestColumnHandler.java}
+41	0	src/test/java/org/apache/commons/dbutils/handlers/columns/TimestampColumnHandlerTest.java
+73	0	src/test/java/org/apache/commons/dbutils/handlers/properties/DatePropertyHandlerTest.java
+62	0	src/test/java/org/apache/commons/dbutils/handlers/properties/PropertyHandlerTest.java
+44	0	src/test/java/org/apache/commons/dbutils/handlers/properties/StringEnumPropertyHandlerTest.java
+21	0	src/test/java/org/apache/commons/dbutils/handlers/properties/TestEnum.java
+32	0	src/test/java/org/apache/commons/dbutils/handlers/properties/TestPropertyHandler.java
+186	115	src/test/{ => java}/org/apache/commons/dbutils/wrappers/SqlNullCheckedResultSetTest.java
+3	6	src/test/{ => java}/org/apache/commons/dbutils/wrappers/StringTrimmedResultSetTest.java
+0	129	src/test/org/apache/commons/dbutils/BasicRowProcessorTest.java
+0	90	src/test/org/apache/commons/dbutils/ProxyFactoryTest.java
+0	1	src/test/org/apache/commons/dbutils/TestQueries.properties
+0	55	src/test/org/apache/commons/dbutils/handlers/BeanHandlerTest.java
+0	67	src/test/org/apache/commons/dbutils/handlers/BeanListHandlerTest.java
+0	108	src/test/org/apache/commons/dbutils/handlers/KeyedHandlerTest.java
+0	66	src/test/org/apache/commons/dbutils/handlers/MapListHandlerTest.java
+17	0	src/test/resources/META-INF/services/org.apache.commons.dbutils.ColumnHandler
+17	0	src/test/resources/META-INF/services/org.apache.commons.dbutils.PropertyHandler
+16	0	src/test/resources/org/apache/commons/dbutils/TestQueries.properties
+0	156	xdocs/changes.xml
+0	50	xdocs/cvs-usage.xml
+-	-	xdocs/images/logo.png
+0	72	xdocs/issue-tracking.xml
+0	60	xdocs/navigation.xml
+0	1	xdocs/style/project.css
