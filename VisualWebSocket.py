@@ -86,7 +86,7 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.plot(x, y)
     plt.axhline(y=y.mean(), c='r', linestyle='--')
     plt.show()
-classi = ["org.java_websocket.drafts.Draft_6455","org.java_websocket.server.WebSocketServer","org.java_websocket.autobahn.AutobahnServerResultsTest"]
+classi = ["org.java_websocket.drafts.Draft_6455","org.java_websocket.server.WebSocketServer","ChatServer"]
 metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
 for classe in classi:
     for metrica in metriche:
