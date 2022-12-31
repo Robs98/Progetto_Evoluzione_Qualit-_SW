@@ -3,6 +3,20 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Java-WebSocket\commitsWebSocket.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\commitsDubbo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\commons-dbutils\commits_commons.csv">
           <value>
             <Attribute>
@@ -10,7 +24,105 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\differenzeDubbo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\dubbo-samples\commitsDubbo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\logging-log4j1\commits.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_Dubbo\0f2a696083f79c1bee059c614de7872382bc2772_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_Dubbo\1c842398a1be50cb3624c4266f6ececf61c9b614_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_Dubbo\7c3f0b479051a606d1a49f5b86f1b2365c23760d_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_Dubbo\8a189893cdbaa0907ec1b1625b13ed92de2f2453_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_WS\11e3d3cfd96e0b84fb1ef7138f96d7df052844d1_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_WS\4f702ab22a602730f28fdf5cd35ce6c78c3659df_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_commons\9be04e5cc990deee3ba672aa8060c523db897b7a_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_commons\d6bb62d61f343e183e5d4f492c2a043332cfdbe9_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_retrofit\193b3f0027dbbcb99d1701e6106a9856197824e4_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_retrofit\40621bf538f6d48af182350adc880406c53dc67c_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\output_retrofit\408c0f83a329b3e07fd02d04fee767fb3957815c_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\retrofit\commits_retrofit.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

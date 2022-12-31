@@ -22,16 +22,16 @@ CK_PATH = 'D:\Desktop\ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar'
 # GIT_COMMITS_FILE = 'commits_retrofit.csv'
 # OUTPUT_DIR = 'output_retrofit'
 
-#apache dbutils
-PROJECT_DIR = './commons-dbutils'
-GIT_COMMITS_FILE = 'commits_commons.csv'
-OUTPUT_DIR = 'output_commons'
+# #apache dbutils
+# PROJECT_DIR = './commons-dbutils'
+# GIT_COMMITS_FILE = 'commits_commons.csv'
+# OUTPUT_DIR = 'output_commons'
 
 
-# #apache-dubbo
-# PROJECT_DIR = './dubbo-samples'
-# GIT_COMMITS_FILE = 'commitsDubbo.csv'
-# OUTPUT_DIR = 'output_Dubbo'
+#apache-dubbo
+PROJECT_DIR = './dubbo-samples'
+GIT_COMMITS_FILE = 'commitsDubbo.csv'
+OUTPUT_DIR = 'output_Dubbo'
 
 
 
@@ -41,7 +41,7 @@ def move_file(path_from: str, path_to:str) -> None:
     open(path_to, 'w+').write(data)
 
 
-os.system(f"cd {PROJECT_DIR}  && git log --tags --simplify-by-decoration --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE}")
+os.system(f"cd {PROJECT_DIR}  && git log --all --grep=refactor --date=iso --pretty=format:%H,%an,%ad> {GIT_COMMITS_FILE}")
 file_data = open(f'{PROJECT_DIR}/{GIT_COMMITS_FILE}', 'r+').read()
 open(GIT_COMMITS_FILE, 'w+').write(file_data)
 #i commit sono filtrati per release
@@ -57,13 +57,13 @@ for i in rows:
     # Checkout
     os.system(f"cd {PROJECT_DIR} & git checkout {commit_hash}")
 
-#TOOL CK
-
-    os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
-    for file in ['class.csv']:
-        if not os.path.exists(OUTPUT_DIR) or not os.path.isdir(OUTPUT_DIR):
-            os.makedirs(OUTPUT_DIR)
-        move_file(file, os.path.join(OUTPUT_DIR,f'{commit_hash}_{file}'))
-
-# delete pending csv files in root directory
-os.system('del *.csv')
+# #TOOL CK
+#
+#     os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
+#     for file in ['class.csv']:
+#         if not os.path.exists(OUTPUT_DIR) or not os.path.isdir(OUTPUT_DIR):
+#             os.makedirs(OUTPUT_DIR)
+#         move_file(file, os.path.join(OUTPUT_DIR,f'{commit_hash}_{file}'))
+#
+# # delete pending csv files in root directory
+# os.system('del *.csv')

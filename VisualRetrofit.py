@@ -86,7 +86,7 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.plot(x, y)
     plt.axhline(y=y.mean(), c='r', linestyle='--')
     plt.show()
-classi = ["retrofit.Utils","retrofit2.Utils","retrofit2.RoboVmPlatformTest"]
+classi = ["retrofit2.RequestFactoryTest","retrofit.Utils","retrofit2.Utils"]
 metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
 for classe in classi:
     for metrica in metriche:
@@ -119,7 +119,7 @@ def estrazioniClassiDaCommit(commits_csv):
         tokens = i.split('\t')
         added, deleted, classes = tokens
         if added != '-':
-            if int(added)>15 and int(deleted)>15:
+            if int(added)>2000:
                  listaClassi.append(classes)
     return listaClassi
 

@@ -81,7 +81,7 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.plot(x, y)
     plt.axhline(y=y.mean(), c='r', linestyle='--')
     plt.show()
-classi = ["org.apache.dubbo.samples.resilience4j.action.AnnotationAction","org.apache.dubbo.samples.chain.FrontendConsumer","org.apache.dubbo.samples.governance.ZKTools"]
+classi = ["org.apache.dubbo.samples.annotation.EmbeddedZooKeeper","ZKTools","org.apache.dubbo.samples.simplified.annotation.ZkUtil"]
 metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
 for classe in classi:
     for metrica in metriche:
@@ -97,10 +97,10 @@ def estrazioniClassiDaCommit(commits_csv):
         # row = rows[i]
         tokens = i.split(',')
         commit_hash, commit_author, commit_date = tokens
-        if(commit_date<="2019-01-17 10:09:11 +0800"):
+        if(commit_date<="2018-11-20 10:02:04 +0800"):
             first_commit_hash = {commit_hash}.pop()
             print(first_commit_hash)
-        if (commit_date >= "2022-12-23 10:10:47 +0800"):
+        if (commit_date >= "2021-09-14 11:04:28 +0800"):
             last_commit_hash = {commit_hash}.pop()
             print(last_commit_hash)
 
@@ -114,7 +114,7 @@ def estrazioniClassiDaCommit(commits_csv):
         tokens = i.split('\t')
         added, deleted, classes = tokens
         if added != '-':
-            if int(added)>25 and int(deleted)>25:
+            if int(added)>20 and int(deleted)>20:
                  listaClassi.append(classes)
     return listaClassi
 
