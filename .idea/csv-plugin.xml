@@ -10,13 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\commitsDubbo.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\commons-dbutils\commits_commons.csv">
           <value>
             <Attribute>
@@ -46,20 +39,6 @@
           </value>
         </entry>
         <entry key="\output_Dubbo\0f2a696083f79c1bee059c614de7872382bc2772_class.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\output_Dubbo\1c842398a1be50cb3624c4266f6ececf61c9b614_class.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\output_Dubbo\7c3f0b479051a606d1a49f5b86f1b2365c23760d_class.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

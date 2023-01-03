@@ -57,13 +57,13 @@ for i in rows:
     # Checkout
     os.system(f"cd {PROJECT_DIR} & git checkout {commit_hash}")
 
-# #TOOL CK
-#
-#     os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
-#     for file in ['class.csv']:
-#         if not os.path.exists(OUTPUT_DIR) or not os.path.isdir(OUTPUT_DIR):
-#             os.makedirs(OUTPUT_DIR)
-#         move_file(file, os.path.join(OUTPUT_DIR,f'{commit_hash}_{file}'))
-#
-# # delete pending csv files in root directory
-# os.system('del *.csv')
+#TOOL CK
+
+    os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
+    for file in ['class.csv']:
+        if not os.path.exists(OUTPUT_DIR) or not os.path.isdir(OUTPUT_DIR):
+            os.makedirs(OUTPUT_DIR)
+        move_file(file, os.path.join(OUTPUT_DIR,f'{commit_hash}_{file}'))
+
+# delete pending csv files in root directory
+os.system('del *.csv')

@@ -137,3 +137,27 @@ def graficoModificheClassi():
     ax.set_title('Retrofix project-Modifiche classi')
     plt.show()
 print(graficoModificheClassi())
+
+# def matriceDiCorrelazione(GIT_COMMITS_FILE):
+#     dfs = []
+#     rows = open(GIT_COMMITS_FILE, 'r+').readlines()
+#     for i in rows:
+#         # row = rows[i]
+#         tokens = i.split(',')
+#         commit_hash, commit_author, commit_date = tokens
+#
+#         # Checkout
+#         os.system(f"cd {DUBBO_PROJECT_DIR} & git checkout {commit_hash}")
+#
+#         # TOOL CK
+#         os.system(f'java -jar {CK_PATH} {DUBBO_PROJECT_DIR}')
+#         file = pd.read_csv('class.csv',usecols = ['cbo','dit','fanin','fanout','wmc','rfc','lcom'])
+#         dfs.append(file)
+#     final_dataframe = pd.concat(dfs)
+#     rounded_corr_matrix = final_dataframe.corr().round(2)
+#
+#     plt.figure(figsize=(8, 6))
+#     sns.heatmap(rounded_corr_matrix, annot=True)
+#     plt.show()
+#
+# matriceDiCorrelazione(GIT_COMMITS_FILE_DUBBO)
