@@ -52,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\output_WS\0c855fa450638332c66fa526a30869519092db4e_class.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\output_WS\11e3d3cfd96e0b84fb1ef7138f96d7df052844d1_class.csv">
           <value>
             <Attribute>
