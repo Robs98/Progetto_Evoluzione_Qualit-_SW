@@ -1,38 +1,47 @@
-import csv
 import os
-import glob
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import self as self
+import seaborn as sns
+
 
 print("Dati Metriche")
 
-
-CK_PATH = 'D:\Desktop\ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar'
-
-
-PROJECT_DIR = './commons-dbutils'
-GIT_COMMITS_FILE = './commons-dbutils/commits_commons.csv'
+PROJECT_DIR = 'C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\commons-dbutils'
+GIT_COMMITS_FILE = 'C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\commons-dbutils\\commits_commons.csv'
 OUTPUT_DIR = 'output_commons'
 
 
-
-
-#lista i file in ordine di modifca
 def sorted_ls(path):
+
+    """
+        Ordinamento dei commit per ultima modifica
+
+        :param path: Il percorso in cui si trovano i commit da ordinare
+        :return: lista dei commit ordinati
+
+    """
+
     mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
     return list(sorted(os.listdir(path), key=mtime,reverse=True))
 
+'''
+def creation_df_class(class_name):
 
+    """
+        Creazione di un dataframe contenente le metriche relative alla classe specificata come parametro
 
-def aggiuntaClasse(class_name):
+        :param class_name: Il nome della classe di interesse
+        :return: dataframe contenente le metriche relative alla classe
+
+    """
+
     dfs = []
-    files = sorted_ls("D:\Desktop\downloader\output_commons")
+    files = sorted_ls("C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\Progetto_Evoluzione_Qualit-_SW\\output_commons")
     for filename in files:
         filename_string = os.path.basename(filename)
         print(filename_string)
-        df = pd.read_csv("D:\Desktop\downloader\output_commons" + '\\' + filename_string, index_col=False)
+        df = pd.read_csv("C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\Progetto_Evoluzione_Qualit-_SW\\output_commons" + '\\' + filename_string, index_col=False)
 
         dframe = df[df['class'] == str(class_name)]
         if dframe is not None:
@@ -43,18 +52,20 @@ def aggiuntaClasse(class_name):
     return final_dataframe
 
 
+def plot_CK_metrics(commit_class_row, metric, class_name, color_line):
 
+    """
+        Creazione dei grafici delle metriche CK per ogni classe
 
+        :param commit_class_row: Il percorso in cui si trovano i commit da ordinare
+        :return: lista dei commit ordinati
 
+    """
 
-
-
-
-
-
-def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
-    x = np.arange(0,len(rigaClassiCommit.index))
-    y = np.array(rigaClassiCommit[metrica])
+    print(plt.style.available)
+    plt.style.use("seaborn-v0_8-dark")
+    x = np.arange(0, len(commit_class_row.index))
+    y = np.array(commit_class_row[metric])
     # ridimensioniamo l'immagine
     plt.figure(figsize=(100, 100))
     # impostiamo i ticks
@@ -62,29 +73,37 @@ def grafico_metriche_CK(rigaClassiCommit,metrica,classe):
     plt.yticks(y)
     # assegniamo etichette agli assi
     plt.xlabel("#commits")
-    plt.ylabel("Valore " + metrica)
+    plt.ylabel("Valori del " + metric)
     # impostiamo il titolo del grafico
-    plt.title("Andamento delle metriche nei vari commits per la classe " + classe)
+    plt.title("Andamento della metrica " + metric + " nel tempo per la classe " + class_name)
     # chiediamo di visualizzare la griglia
     plt.grid()
     # disegniamo due linee
-    plt.plot(x, y)
-    plt.axhline(y=y.mean(), c='r', linestyle='--')
+    plt.plot(x, y, color = color_line, linewidth = 3)
+
     plt.show()
-classi = ["org.apache.commons.dbutils.wrappers.SqlNullCheckedResultSet","org.apache.commons.dbutils.BaseTestCase","org.apache.commons.dbutils.wrappers.SqlNullCheckedResultSetTest"]
+
+
+classi = ["org.apache.commons.dbutils.wrappers.SqlNullCheckedResultSetTest","org.apache.commons.dbutils.BaseTestCase","org.apache.commons.dbutils.wrappers.SqlNullCheckedResultSet"]
 metriche = ['cbo','dit','fanin','fanout','wmc','lcom','rfc']
+colori = ['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'brown']
 for classe in classi:
-    for metrica in metriche:
-        grafico_metriche_CK(aggiuntaClasse(classe),metrica,classe)
+    for (metrica,colore) in zip(metriche,colori):
+        plot_CK_metrics(creation_df_class(classe), metrica, classe, colore)
+'''
 
+def extraction_classes_from_commit(commits_csv):
 
+    """
+        Estrazione delle classi dai commit in un file csv
 
+        :param commit_csv: Il file csv da cui estrarre i commit
+        :return risultati, lista_soglie: lista dei risultati e lista delle soglie da analizzare
 
+    """
 
-def estrazioniClassiDaCommit(commits_csv):
     rows = open(commits_csv, 'r+').readlines()
     for i in rows:
-        # row = rows[i]
         tokens = i.split(',')
         commit_hash, commit_author, commit_date = tokens
         if(commit_date<="2007-07-29 03:42:34 +0000"):
@@ -94,40 +113,67 @@ def estrazioniClassiDaCommit(commits_csv):
             last_commit_hash = {commit_hash}.pop()
             print(last_commit_hash)
 
-    os.system(f"cd {PROJECT_DIR}  && git diff --numstat {first_commit_hash}..{last_commit_hash}> differenzeCommons.txt")
-    read_file = pd.read_csv (r'./commons-dbutils/differenzeCommons.txt', delimiter='|')
+    os.system(f"cd {PROJECT_DIR}  && git diff --numstat {first_commit_hash}..{last_commit_hash} > differenzeCommons.txt")
+    read_file = pd.read_csv ("C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\commons-dbutils\\differenzeCommons.txt", delimiter='|')
     read_file.to_csv (r'differenzeCommons.csv',index=None)
     rows = open('differenzeCommons.csv', 'r+').readlines()
-    listaClassi = []
+
+    lista_soglie = [250, 500]
+    risultati = [0, 0, 0]
+    nulli = 0
     for i in rows:
         # row = rows[i]
         tokens = i.split('\t')
         added, deleted, classes = tokens
         if added != '-':
-            if int(added)>100 and int(deleted)>100:
-                 listaClassi.append(classes)
-    return listaClassi
+            if int(added)<lista_soglie[0]:
+                risultati[0] = risultati[0] + 1
+            elif int(added)>lista_soglie[0] and int(added)<lista_soglie[1]:
+                risultati[1] = risultati[1] + 1
+            else:
+                risultati[2] = risultati[2] + 1
+        else:
+            nulli = nulli+1
+    print(nulli)
+    return risultati, lista_soglie
+
+result, lista_soglie = extraction_classes_from_commit(GIT_COMMITS_FILE)
+print(result)
+print(lista_soglie)
 
 
-print(estrazioniClassiDaCommit(GIT_COMMITS_FILE))
+def plot_class_changes(lista_soglie, result):
 
+    """
+        Creazione del grafico a torta relativo alle modifiche (in aggiunta) della classe
 
-def graficoModificheClassi():
+        :param lista_soglie, result: lista delle soglie analizzate, lista dei risultati ottenuti
 
-    x = np.array([3, 130])
-    label = ['Classi Modificate (>100LOC)','Classi modificate (<100 LOC)']
-    explode = [0, 0.2]
+    """
+
+    x = np.array([result[0], result[1], result[2]])
+    label = ['Classi Modificate (<'+str(lista_soglie[0])+' LOC)',
+             'Classi modificate ('+str(lista_soglie[0])+'< LOC <'+str(lista_soglie[1])+' LOC)',
+             'Classi Modificate (>'+str(lista_soglie[1])+' LOC)']
+    explode = [0, 0, 0]
     fig, ax = plt.subplots()
-    ax.pie(x, labels=label, autopct='%.0f%%', explode = explode)
-    ax.set_title('CommondDB project-Modifiche classi')
+    ax.pie(x, labels=label, autopct='%.3f%%', explode = explode)
+    ax.set_title('Commons-dbutils project-Modifiche classi')
     plt.show()
-print(graficoModificheClassi())
 
-def matriceDiCorrelazione(GIT_COMMITS_FILE):
+print(plot_class_changes(lista_soglie, result))
+
+
+def correlationMatrix(GIT_COMMITS_FILE):
+
+    """
+        Creazione della matrice di correlazione relativa al progetto
+        :param GIT_COMMITS_FILE: path assoluto della cartella contenente i file csv di commit
+    """
+
     dfs = []
     rows = open(GIT_COMMITS_FILE, 'r+').readlines()
     for i in rows:
-        # row = rows[i]
         tokens = i.split(',')
         commit_hash, commit_author, commit_date = tokens
 
@@ -135,7 +181,7 @@ def matriceDiCorrelazione(GIT_COMMITS_FILE):
         os.system(f"cd {PROJECT_DIR} & git checkout {commit_hash}")
 
         # TOOL CK
-        os.system(f'java -jar {CK_PATH} {PROJECT_DIR}')
+        os.system(f'java -jar "C:\\Users\\franc\\PycharmProjects\\EvoluzioneQualitaSW\\ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar" {PROJECT_DIR}')
         file = pd.read_csv('class.csv',usecols = ['cbo','dit','fanin','fanout','wmc','rfc','lcom'])
         dfs.append(file)
     final_dataframe = pd.concat(dfs)
@@ -145,4 +191,4 @@ def matriceDiCorrelazione(GIT_COMMITS_FILE):
     sns.heatmap(rounded_corr_matrix, annot=True)
     plt.show()
 
-matriceDiCorrelazione(GIT_COMMITS_FILE_DUBBO)
+correlationMatrix(GIT_COMMITS_FILE)
