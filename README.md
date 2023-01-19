@@ -13,4 +13,4 @@ Il progetto ha l’obiettivo di monitorare l’evoluzione di 4 progetti open sou
 
 DOCUMENTAZIONE:
 
-http://localhost:63342/Progetto_Evoluzione_Qualit-_SW/Progetto_Evoluzione_Qualit-_SW/html/index.html?_ijt=vrgpsqgj7rmt803fhp9dcqi8f1&_ij_reload=RELOAD_ON_SAVE
+Si rimanda alla cartella html presente all'interno del progetto.
