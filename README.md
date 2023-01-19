@@ -3,7 +3,7 @@
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/Python-v3-blue" alt="Python">
-    <img src="https://img.shields.io/badge/Unisannio-Telegram%20Dump%20Finder-blue" alt="Unisannio">
+    <img src="https://img.shields.io/badge/Unisannio-Evoluzione e Qualità del Software" alt="Unisannio">
 </p>
                                                   
 Overview Progetto:
