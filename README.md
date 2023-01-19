@@ -1,14 +1,10 @@
-
- 
-
-
-                                                                   CORSO DI LAUREA MAGISTRALE    
-                                                                   IN INGEGNERIA INFORMATICA
-
-                                                         PROGETTO DI: Evoluzione e Qualità del Software
-
-
-                                                  “Quantitative and Qualitative Analysis of Open Source Systems”
+<p align= "center">
+<img src="https://www.unisannio.it/sites/default/files/emblema.png.pagespeed.ce.L9uvAVRynq.png" alt="Unisannio" width= 30%>
+</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Python-v3-blue" alt="Python">
+    <img src="https://img.shields.io/badge/Unisannio-Telegram%20Dump%20Finder-blue" alt="Unisannio">
+</p>
                                                   
 Overview Progetto:
 
